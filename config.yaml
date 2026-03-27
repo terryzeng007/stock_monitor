@@ -1,22 +1,19 @@
 stocks:
-  - code: "sh000001"
-    name: "上证指数"
-    high: 3500
-    low: 3000
   - code: "sz000001"
     name: "平安银行"
     high: 15.0
-    low: 12.0
+    low: 10.0
 
 refresh_interval: 5
 
 automation:
-  enabled: false
-  buy_button: {x: 0, y: 0}
-  sell_button: {x: 0, y: 0}
-  price_input: {x: 0, y: 0}
-  amount_input: {x: 0, y: 0}
-  confirm_button: {x: 0, y: 0}
+  enabled: true
+  stock_input: {x: 295, y: 125}
+  buy_button: {x: 323, y: 245}
+  price_input: {x: 278, y: 163}
+  amount_input: {x: 297, y: 222}
+  confirm_button: {x: 920, y: 668}
+  open_app: {x: 416, y: 1055}
 
 notification:
   enabled: true
