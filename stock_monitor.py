@@ -35,14 +35,7 @@ class StockMonitor:
     
     def fetch_price(self, stock_code):
         try:
-            if stock_code.startswith('sh'):
-                code = stock_code[2:]
-                url = f"https://hq.sinajs.cn/list=s_{code}"
-            elif stock_code.startswith('sz'):
-                code = stock_code[2:]
-                url = f"https://hq.sinajs.cn/list=sz_{code}"
-            else:
-                url = f"https://hq.sinajs.cn/list={stock_code}"
+            url = f"http://hq.sinajs.cn/list={stock_code}"
             
             headers = {
                 'Referer': 'https://finance.sina.com.cn',
@@ -107,7 +100,7 @@ class StockMonitor:
                     
                     alerts = self.check_alert(stock, price)
                     for alert in alerts:
-                        print(f"⚠️ {alert}")
+                        print(f"ALERT: {alert}")
                         self.show_notification("股票监控提醒", alert)
                     
                     self.last_prices[code] = price
